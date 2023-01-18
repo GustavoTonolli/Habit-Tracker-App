@@ -1,10 +1,7 @@
 import Fastify from 'fastify';
-import { PrismaClient } from '@prisma/client';
-
+import { prisma } from './lib/prisma';
 
 const app = Fastify();
-const prisma = new PrismaClient()
-
 
 app.get ('/allHabits', async () => {
     const habits = await prisma.habit.findMany() // retorna todos os habitos
