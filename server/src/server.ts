@@ -1,17 +1,18 @@
+import cors from '@fastify/cors';
 import Fastify from 'fastify';
 import { prisma } from './lib/prisma';
+import { appRoutes } from './lib/routes';
+
 
 const app = Fastify();
 
-app.get ('/allHabits', async () => {
-    const habits = await prisma.habit.findMany() // retorna todos os habitos
-    return habits
-})
+app.register(cors)
+app.register(appRoutes)
 
 
 
 app.listen({
-    port: 3000,
+    port: 3333,
 }).then(() => {
-    console.log ('Server is running on port 3000');
+    console.log ('Server is running on port 3333');
 });
