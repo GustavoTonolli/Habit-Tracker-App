@@ -13,11 +13,11 @@ datasource db {
 // prisma suporta varios banco de dados, mongo, etc...
 
 model Habit {
-  id         String   @id @default(uuid()) // @id cria como chave primaria, @default(uuid()) gera uma string automatica com unique identifier
+  id         String          @id @default(uuid()) // @id cria como chave primaria, @default(uuid()) gera uma string automatica com unique identifier
   title      String
   created_at DateTime
-  dayHabits DayHabit[]
-  weekDays  HabitWeekDays[]
+  dayHabits  DayHabit[]
+  weekDays   HabitWeekDays[]
 
   @@map("habits") // cria a tabela da forma correta que eu passar
 }
@@ -40,7 +40,7 @@ model Day {
   dayHabits DayHabit[]
 
   @@unique([date])
-  @@map("days")
+  @@map("day")
 }
 
 model DayHabit {
