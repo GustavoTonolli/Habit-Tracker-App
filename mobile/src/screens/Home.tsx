@@ -33,8 +33,6 @@ export function Home() {
       <ScrollView
       showsVerticalScrollIndicator ={false}
       contentContainerStyle={{ paddingBottom: 100}}
-
-      
       >
         <View className='flex-row flex-wrap'>
           {
@@ -44,8 +42,6 @@ export function Home() {
               />
             ))
           }
-  
-  
           {
             amountOfDaysToFill > 0 && Array
               .from({ length: amountOfDaysToFill })
