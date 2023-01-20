@@ -42,7 +42,6 @@ model Day {
   @@unique([date])
   @@map("days")
 }
-
 model DayHabit {
   id String @id @default(uuid())
 
